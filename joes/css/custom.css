@@ -1,0 +1,663 @@
+/* ==========================================================================
+   Joe's Coffee exercise completed for the Ammirati front end dev position
+   Hand coded by Leslie Bass, www.lesliebass.com
+   ========================================================================== */
+   
+/* Global styles
+   ========================================================================== */
+
+html {
+	background: url(../img/bg.png) repeat-x;
+}
+
+h2 {
+	color: #6e3d00;
+	font-family: Helvetica, sans-serif;
+	font-size: 26pt;
+	font-weight: 200;
+	line-height: 32pt;
+}
+
+h3 {
+	color: #00acee;
+	margin: 5px 0 0 0;
+}
+
+h4 {
+	color: #000000;
+	font-size: 24pt;
+	margin: 0 0 5px 0;
+}
+
+a {
+	color: #f96900;
+	font-weight: bold;
+	text-decoration: none;
+   -webkit-transition:color 0.25s ease-in;  
+   -moz-transition:color 0.25s ease-in;  
+   -o-transition:color 0.25s ease-in;  
+   transition:color 0.25s ease-in;  
+}
+
+a:hover {
+	color: #3d210b;
+}
+
+ul.test-list {
+	list-style-type: none;
+	padding: 0 10px;
+}
+
+ul.test-list li.test-item,
+ul.test-list li a {
+	font-size: 10pt;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+	width: inherit;
+}
+
+.imgleft {
+	float: left;
+	padding: 0 8px 0 0;
+}
+
+.imgright {
+	float: right;
+}
+
+input {
+	border: 2px solid #b2a099;
+	padding: 10px;
+}
+
+/* Header styles
+   ========================================================================== */
+
+.header-container {
+	margin-top: 12px;
+}
+
+.head-callout {
+	float: right;
+	margin: 60px 19px 0 0;
+}
+
+img.logo {
+	-webkit-transition: opacity .25s ease-out;
+    -moz-transition: opacity .25s ease-out;
+    -o-transition: opacity .25s ease-out;
+    transition: opacity .25s ease-out;
+}
+
+img.logo:hover {
+	opacity: 0.7;
+}
+
+/* Nav styles
+   ========================================================================== */
+
+.nav-container {
+	background-color: #987a62;
+	height: 70px;
+}
+
+nav a {
+    float: left;
+    margin: 0 1.7%;
+    padding: 20px 2%;
+    width: 5.5%;
+}
+
+nav li:first-child a {
+    margin-left: 0;
+}
+
+nav li:last-child a {
+    margin-right: 0;
+}
+
+nav li a {
+	color: #fff;
+	font-family: Helvetica, sans-serif;
+	font-size: 16pt;
+	font-weight: 700;
+	text-decoration: none;
+   -webkit-transition:color 0.25s ease-in;  
+   -moz-transition:color 0.25s ease-in;  
+   -o-transition:color 0.25s ease-in;  
+   transition:color 0.25s ease-in;  
+}
+
+nav li a:hover {
+	color: #fec500;
+}
+
+/* Flexslider style overrides
+   ========================================================================== */
+   
+section.carousel .flexslider { 
+	background: #987a62; 
+	border: none; 
+	margin: 0;
+	overflow: hidden;
+	width: 100%;
+   -webkit-box-shadow: none;
+   -moz-box-shadow: none;
+   -o-box-shadow: none;
+	box-shadow: none;
+}
+
+section.carousel .flex-control-nav {
+	bottom: 20px;
+	z-index: 10;
+}
+
+section.carousel a.flex-prev {
+	background-image: url(../img/carousel-prev.png);
+	background-repeat: no-repeat;
+	left: 210px;
+	opacity: 0.8;
+}
+
+section.carousel .flexslider:hover .flex-prev {
+	left: 210px;
+}
+
+section.carousel a.flex-next {
+	background-image: url(../img/carousel-next.png);
+	background-repeat: no-repeat;
+	opacity: 0.8;
+	right: 210px;
+}
+
+section.carousel .flexslider:hover .flex-next {
+	right: 210px;
+}
+
+section.carousel .flex-direction-nav a:before {
+	content: none; /* Remove character from "previous" and "next" directionNav items */
+}
+
+section.carousel .flex-control-paging li a {
+    background: rgb(255, 255, 255) transparent; /* Fallback for no RGBa support */
+	background: rgba(255,255,255,0.8); /* RGBa with opacity */
+	height: 22px; /* Make paging nav larger */
+	width: 22px; /* Make paging nav larger */
+}
+
+section.carousel .flex-control-paging li .flex-active {
+    background: rgb(254, 197, 0) transparent; /* Fallback for no RGBa support */
+	background: rgba(254, 197, 0, 0.8); /* RGBa with opacity */
+}
+
+/* Callout styles
+   ========================================================================== */
+   
+.callout {
+    background: rgb(128, 128, 128) transparent; /* Fallback for no RGBa support */
+    background: rgba(128, 128, 128, 0.2); /* RGBa with opacity */
+    height: 122px;
+    margin: 0 0 65px 0;
+}
+
+.callout h2 {
+	margin: 0;
+	padding: 30px 150px 0 155px;
+    position: relative;
+}
+
+.callout h2:before {
+    border-style: solid;
+    border-width: 25px 0 0 25px;
+    border-color: #808080 transparent; /* IE8 */
+    border-color: #808080 rgba(0,128,64,0);  /* Firefox */
+    content: '';
+    left: 180px;
+    opacity: 0.2;
+    position: absolute;
+    right: 0;
+    top: 122px;
+}
+
+.callout h2:after {
+    border-style: solid;
+    border-width: 25px 25px 0 0;
+    border-color: #808080 transparent; /* IE8 */
+    border-color: #808080 rgba(0,128,64,0);  /* Firefox */
+	content: '';
+    left: 0;
+    opacity: 0.2;
+	position: absolute;
+    top: 122px;
+    width: 155px;
+}
+
+/* Article styles
+   ========================================================================== */
+   
+article.map {
+	float: left;
+}
+
+/* Aside styles
+   ========================================================================== */
+   
+aside.test {
+	background: rgb(128, 128, 128) transparent; /* Fallback for no RGBa support */
+    background: rgba(128, 128, 128, 0.2); /* RGBa with 0.2 opacity */
+    float: right;
+    padding: 10px 10px 0 10px;
+    width: 30%;
+}
+
+/* Testimonial styles
+   ========================================================================== */
+   
+li.test-item {
+	background: rgb(128, 128, 128) transparent; /* Fallback for no RGBa support */
+    background: rgba(128, 128, 128, 0.2); /* RGBa with 0.2 opacity */
+	margin: 0 0 24px 0;
+	padding: 17px 3px 17px 0;
+}
+
+li.test-item {
+    height: 60px;
+}
+
+ul.test-list .more {
+	float: right;
+	padding: 0 0 20px 0;
+}
+
+/* Footer styles
+   ========================================================================== */
+
+footer {
+	clear: both;
+	padding: 20px 0 0 0;
+}
+
+.foot-left,
+ul.foot-right li {
+	color: #808080;
+	float: left;
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+ul.foot-right li {
+	padding-left: 20px;
+}
+
+ul.foot-right {
+	float: right;
+	list-style-type: none;
+}
+
+ul.foot-right li {
+	display: inline;
+}
+
+/* Fancybox modal styles
+   ========================================================================== */
+
+#signup {
+	background: url('../img/signup-news.png') no-repeat;
+	float: right;
+	height: 55px;
+	margin: 60px 0 0 0;
+	padding: 0;
+	width: 286px;
+}
+
+#signup:hover {
+	background-position: -286px 0;
+}
+
+#signup-modal {
+	display: none;
+}
+
+.btn {
+	position: relative;
+	top: -1px;
+}
+
+.fancybox-opened .fancybox-skin,
+.fancybox-skin {
+	left: 6px;
+	padding: 40px !important;
+	position: fixed;
+	top: 6px;
+   -webkit-border-radius: 0 !important;
+   -moz-border-radius: 0 !important;
+   -o-border-radius: 0 !important;
+   border-radius: 0 !important;
+}
+
+.fancybox-skin {
+	background-color: #ffffff !important;
+}
+
+.fancybox-wrap { 
+  left: 6px !important; 
+  position: fixed !important;
+  top: 6px !important; 
+}
+
+.fancybox-close {
+	background-repeat: no-repeat;
+	right: 2px !important;
+	top: 5px !important;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+
+@media only screen and (min-width: 1140px) {
+
+    .wrapper,
+    nav {
+        width: 980px;
+        margin: 0 auto;
+    }
+    
+}
+
+@media only screen and (max-width: 1140px) and (min-width: 960px) {
+
+    .wrapper,
+    nav {
+    	margin: 0 auto;
+        width: 940px;
+    }
+
+	.callout h2 {
+    	padding: 30px 50px 0 50px;
+    }
+    
+    .callout h2:before {
+    	left: 86px;
+    }
+    
+    .callout h2:after {
+    	width: 60px;
+    }
+    
+    section.carousel .flexslider:hover .flex-prev,
+    section.carousel a.flex-prev {
+    	left: 150px;
+    }
+    
+    section.carousel .flexslider:hover .flex-next,
+    section.carousel a.flex-next {
+    	right: 150px;
+    }
+    
+    section.carousel .flex-control-nav {
+    	bottom: 10px;
+    }
+    
+    section.carousel .flex-control-nav li {
+    	margin: 0 3px;
+    }
+    
+    section.carousel .flex-control-paging li a {
+    	height: 11px;
+    	width: 11px;
+    }
+}
+
+@media only screen and (max-width: 960px) and (min-width: 768px) {
+   
+   .header-container {
+   		margin: 12px 10px 0 10px;
+   }
+   
+   img.logo {
+   		height: auto;
+   		width: 50%;
+	}
+	
+	#signup {
+		margin: 40px 0 0 0;
+	}
+   
+    section.carousel .flexslider:hover .flex-prev,
+    section.carousel a.flex-prev {
+    	left: 100px;
+    }
+    
+    section.carousel .flexslider:hover .flex-next,
+    section.carousel a.flex-next {
+    	right: 100px;
+    }
+    
+    section.carousel .flex-control-nav {
+    	bottom: 10px;
+    }
+    
+    section.carousel .flex-control-nav li {
+    	margin: 0 3px;
+    }
+    
+    section.carousel .flex-control-paging li a {
+    	height: 11px;
+    	width: 11px;
+    }
+    
+    h2 {
+    	font-size: 22pt;
+    	line-height: 28pt;
+    }
+    
+    .callout h2 {
+    	padding: 30px 50px 0 50px;
+    }
+    
+    .callout h2:before {
+    	left: 86px;
+    }
+    
+    .callout h2:after {
+    	width: 60px;
+    }
+   
+	.main {
+   		margin-left: auto;
+   		margin-right: auto;
+   		width: 90%;
+	}
+
+	article.map {
+        float: left;
+        margin: 0 0 20px 15px;
+        width: 100%;
+	}
+
+	aside.test {
+        padding: 0 12px;
+        width: 95%;
+	}
+   
+}
+
+@media only screen and (max-width: 768px) and (min-width: 320px) {
+
+	.header-container {
+   		margin: 12px 10px 0 10px;
+	}
+	
+	#signup {
+		float: none;
+		margin: 5px 0 0 100px;
+
+	}
+   
+	img.logo {
+		margin-left: auto;
+		margin-right: auto;
+		float: none;
+		width: 380px;
+	}
+	
+	.nav-container {
+		height: 60px;
+	}
+	
+	nav a {
+        float: left;
+        margin: 0 1.7%;
+        padding: 19px 2%;
+        width: 55px;
+	}
+	
+	nav li a {
+		font-size: 12pt;
+	}
+	
+	nav li:first-child a {
+        margin-left: 0;
+	}
+
+	nav li:last-child a {
+        margin-right: 0;
+	}
+	
+    section.carousel .flexslider:hover .flex-prev,
+    section.carousel a.flex-prev {
+    	left: 30px;
+    }
+    
+    section.carousel .flexslider:hover .flex-next,
+    section.carousel a.flex-next {
+    	right: 30px;
+    }
+    
+    section.carousel .flex-control-nav {
+    	display: none;
+    }
+    
+    section.carousel .flex-control-nav li {
+    	margin: 0 3px;
+    }
+    
+    section.carousel .flex-control-paging li a {
+    	height: 11px;
+    	width: 11px;
+    }
+    
+    .callout {
+    	margin: 0 0 55px 0;
+    }
+    
+    .callout h2 {
+    	padding: 20px 10px 0 20px;
+    }
+    
+    .callout h2:before {
+    	left: 28px;
+    }
+    
+    .callout h2:after {
+    	width: 5px;
+    }
+    
+    h2 {
+    	font-size: 16pt;
+    	line-height: 22pt;
+    }
+    
+    aside.test {
+    	clear: both;
+    	margin: 20px 3% 0 0;
+    	width: 90%;
+    }
+
+/* ========================
+   IE Fixes
+   ======================== */
+
+    nav ul li {
+        display: inline;
+    }
+
+    .oldie nav a {
+        margin: 0 0.7%;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+
+	#signup {
+		margin: 5px 0 0 0;
+	}
+
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
